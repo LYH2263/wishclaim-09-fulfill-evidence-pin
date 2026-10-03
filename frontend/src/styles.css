@@ -15,6 +15,7 @@ h1, .serif { font-family: "Instrument Serif", Georgia, serif; font-weight: 400; 
 .card {
   break-inside: avoid; background: var(--card); border: 1px solid var(--line);
   border-radius: 18px; padding: 16px; margin: 0 0 14px; cursor: pointer;
+  position: relative;
 }
 .card h3 { margin: 0 0 6px; font-family: "Instrument Serif", serif; font-size: 1.4rem; }
 .tag { font-size: 12px; color: var(--muted); }
@@ -35,3 +36,24 @@ button.ghost { background: transparent; color: var(--ink); border: 1px solid var
 input, textarea { width: 100%; padding: 10px; border-radius: 12px; border: 1px solid var(--line); font: inherit; margin: 6px 0 12px; background: #fff; }
 .menu-btn { position: fixed; left: 16px; top: 16px; z-index: 10; }
 .err { color: #a33; }
+select { width: 100%; padding: 10px; border-radius: 12px; border: 1px solid var(--line); font: inherit; margin: 6px 0 12px; background: #fff; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+
+/* 核销举证 */
+.evidence-box { margin-top: 18px; padding: 16px; border: 1px dashed var(--line); border-radius: 16px; background: rgba(255,255,255,.5); }
+.evidence-box h3 { margin: 0 0 10px; }
+.evidence-box.frozen { border-style: solid; background: var(--card); }
+.preview-box { margin-top: 12px; padding: 12px; border-radius: 12px; border: 1px solid var(--line); background: #fff; }
+.channel-enum { list-style: none; margin: 8px 0; padding: 0; font-size: 13px; color: var(--muted); }
+.channel-enum li { padding: 3px 0; border-bottom: 1px dotted var(--line); }
+.channel-enum li.picked { color: var(--ink); font-weight: 600; }
+.evidence-dl { margin: 8px 0 0; }
+.evidence-dl div { display: flex; gap: 10px; padding: 3px 0; font-size: 14px; }
+.evidence-dl dt { width: 64px; color: var(--muted); margin: 0; }
+.evidence-dl dd { margin: 0; }
+.corner {
+  position: absolute; top: 10px; right: 12px; font-size: 11px; padding: 2px 8px;
+  border-radius: 999px; color: #fff;
+}
+.corner[data-tone="done"] { background: #7aa07a; }
+.corner[data-tone="pending"] { background: var(--rose); }
