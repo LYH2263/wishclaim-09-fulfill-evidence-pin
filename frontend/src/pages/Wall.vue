@@ -4,6 +4,7 @@
     <p class="tag">无顶栏 · 瀑布流 · 点卡片认领</p>
     <div class="masonry">
       <article v-for="w in rows" :key="w.id" class="card" @click="$router.push('/wishes/'+w.id)">
+        <span v-if="w.proof_badge" class="corner-badge">{{ w.proof_badge.text }}</span>
         <h3>{{ w.title || '（无标题）' }}</h3>
         <p>{{ w.note }}</p>
         <span class="tag">{{ w.status }} · {{ w.data_quality }}</span>
